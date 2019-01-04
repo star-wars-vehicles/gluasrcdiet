@@ -27,7 +27,7 @@ local M = {}
 local kw = {}
 for v in ([[
 and break do else elseif end false for function goto if in
-local nil not or repeat return then true until while]]):gmatch("%S+") do
+local nil not or repeat return then true until while continue]]):gmatch("%S+") do
   kw[v] = true
 end
 

@@ -1091,14 +1091,14 @@ end
 
 ----------------------------------------------------------------------
 -- parse a continue statement
--- * this function has been added later, it just parses goto statement
+-- * this function has been added later, it just parses continue
 --   without any validation!
 -- * used in stat()
 ----------------------------------------------------------------------
 
 local function continue_stat()
   -- stat -> continue_stat -> continue
-  nextt()
+  nextt() -- skip continue
 end
 
 ----------------------------------------------------------------------
