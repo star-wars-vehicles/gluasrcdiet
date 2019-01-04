@@ -1,19 +1,19 @@
 -- vim: set ft=lua:
 
-package = 'LuaSrcDiet'
-version = 'dev-0'
+package = 'gluasrcdiet'
+version = 'dev-1'
 
 source = {
-  url = 'git://github.com/jirutka/luasrcdiet.git',
+  url = 'git://github.com/star-wars-vehicles/gluasrcdiet.git',
   branch = 'master',
 }
 
 description = {
   summary = 'Compresses Lua source code by removing unnecessary characters',
   detailed = [[
-This is revival of LuaSrcDiet originally written by Kein-Hong Man.]],
-  homepage = 'https://github.com/jirutka/luasrcdiet',
-  maintainer = 'Jakub Jirutka <jakub@jirutka.cz>',
+This is revival of LuaSrcDiet originally written by Kein-Hong Man. Support for GLua]],
+  homepage = 'https://github.com/star-wars-vehicles/gluasrcdiet',
+  maintainer = 'David Katz <mciluziionz@gmail.com> and Jakub Jirutka <jakub@jirutka.cz>',
   license = 'MIT',
 }
 
@@ -38,7 +38,7 @@ build = {
   },
   install = {
     bin = {
-      luasrcdiet = 'bin/luasrcdiet',
+      gluasrcdiet = 'bin/luasrcdiet',
     }
   }
 }

@@ -18,6 +18,8 @@
 --   last statement of block (Lua 5.2+).
 -- * Added basic support for goto and label statements, i.e. parser
 --   does not crash on them (Lua 5.2+).
+-- * Added basic support for continue statements, i.e. parser
+--   does not crash on them (GLua).
 ----
 local fmt = string.format
 local gmatch = string.gmatch
@@ -1088,6 +1090,18 @@ local function goto_stat()
 end
 
 ----------------------------------------------------------------------
+-- parse a continue statement
+-- * this function has been added later, it just parses goto statement
+--   without any validation!
+-- * used in stat()
+----------------------------------------------------------------------
+
+local function continue_stat()
+  -- stat -> continue_stat -> continue
+  nextt()
+end
+
+----------------------------------------------------------------------
 -- parse a function call with no returns or an assignment statement
 -- * the struct with .prev is used for name searching in lparse.c,
 --   so it is retained for now; present in assignment() also
@@ -1174,6 +1188,7 @@ local stat_call = {             -- lookup for calls in stat()
   ["break"] = break_stat,
   ["goto"] = goto_stat,
   ["::"] = label_stat,
+  ["continue"] = continue_stat,
 }
 
 local function stat()
